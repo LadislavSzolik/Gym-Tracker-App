@@ -50,9 +50,9 @@ class WorkoutLogTableViewController: UITableViewController {
     func unwindToWorkoutLog(segue: UIStoryboardSegue) {        
         guard segue.identifier == "SaveWorkoutLogSegue" else { return}
         
-        let workoutLogDetailController = segue.source as! WorkoutLogDetailTableViewController
+        let workoutRecordController = segue.source as! WorkoutRecordTableViewController
         
-        if let newWorkoutLog = workoutLogDetailController.workoutLog {
+        if let newWorkoutLog = workoutRecordController.workoutLog {
             if let selectedRow = tableView.indexPathForSelectedRow {
                 workoutLogs[selectedRow.row] = newWorkoutLog
                 tableView.reloadRows(at: [selectedRow], with: .none)

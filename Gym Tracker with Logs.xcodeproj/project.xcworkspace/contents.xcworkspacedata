@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Gym Tracker with Logs.xcodeproj">
+      location = "group:../../Gym Tracker with Flows/Gym Tracker App/Gym Tracker App/Media.xcassets">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/ladislavszolik/iOS/Gym Tracker App/Gym Tracker with Logs/Gym Tracker with Logs/Assets.xcassets">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

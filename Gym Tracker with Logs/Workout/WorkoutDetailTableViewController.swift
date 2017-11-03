@@ -26,7 +26,9 @@ class WorkoutDetailTableViewController: UITableViewController, WorkoutMuscleGrou
     var allExercises = [Exercise]()
     
     var workout: Workout?
+    var recordingWorkout:Bool = false
     
+    @IBOutlet weak var leftBarButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,20 +37,19 @@ class WorkoutDetailTableViewController: UITableViewController, WorkoutMuscleGrou
         }
         
         if let selectedWorkout = workout {
+            recordingWorkout = true
+            
             selectedExercises = selectedWorkout.exercises
             selectedMuscleGroups = selectedWorkout.muscleGroups
+            
+            navigationItem.title = selectedMusclesDescription
+            navigationItem.rightBarButtonItem = editButtonItem
+            navigationItem.hidesBackButton = false
         }
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -58,9 +59,16 @@ class WorkoutDetailTableViewController: UITableViewController, WorkoutMuscleGrou
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "Target Muscle Groups"
-        } else {
+        
+        switch section {
+        case 0:
+            if recordingWorkout {
+                return ""
+            }
+            else {
+                return "Target Muscle Groups"
+            }
+        default:
             return "Exercises"
         }
     }
@@ -75,13 +83,16 @@ class WorkoutDetailTableViewController: UITableViewController, WorkoutMuscleGrou
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
+        if indexPath.section == 0 && !recordingWorkout {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MuscleGroupChooserCell", for: indexPath)
             if selectedMuscleGroups.count == 0 {
                 cell.textLabel?.text = "Select Muscles"
             } else {
                 cell.textLabel?.text = selectedMusclesDescription
             }
+            return cell
+        } else if indexPath.section == 0 && recordingWorkout {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RecordWorkoutCell", for: indexPath)
             return cell
         } else {
             if selectedMuscleGroups.isEmpty {
@@ -105,7 +116,11 @@ class WorkoutDetailTableViewController: UITableViewController, WorkoutMuscleGrou
         })
         tableView.reloadData()
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -124,12 +139,6 @@ class WorkoutDetailTableViewController: UITableViewController, WorkoutMuscleGrou
         }
     }
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
 
     /*
     // Override to support conditional rearranging of the table view.
@@ -150,6 +159,9 @@ class WorkoutDetailTableViewController: UITableViewController, WorkoutMuscleGrou
             muscleGroupController.chosenMuscleGroups = selectedMuscleGroups
         } else if segue.identifier == "SaveWorkout" {
             workout = Workout(name: selectedMusclesDescription, exercises: selectedExercises, muscleGroups: selectedMuscleGroups)
+        } else if segue.identifier == "RecordWorkout" {
+            let workoutRecordController = segue.destination as! WorkoutRecordTableViewController
+            workoutRecordController.workout = workout
         }
     }
     

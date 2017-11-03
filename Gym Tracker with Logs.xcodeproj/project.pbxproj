@@ -12,16 +12,17 @@
 		840F6DB41FA48D1600D93EA3 /* WorkoutMuscleGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F6DB31FA48D1600D93EA3 /* WorkoutMuscleGroupTableViewController.swift */; };
 		8455C0ED1F9C7A58003A0021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455C0EC1F9C7A58003A0021 /* AppDelegate.swift */; };
 		8455C0F21F9C7A58003A0021 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8455C0F01F9C7A58003A0021 /* Main.storyboard */; };
-		8455C0F41F9C7A58003A0021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8455C0F31F9C7A58003A0021 /* Assets.xcassets */; };
 		8455C0F71F9C7A58003A0021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8455C0F51F9C7A58003A0021 /* LaunchScreen.storyboard */; };
-		8455C0FF1F9C7E9E003A0021 /* WorkoutLogDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455C0FE1F9C7E9E003A0021 /* WorkoutLogDetailTableViewController.swift */; };
+		8455C0FF1F9C7E9E003A0021 /* WorkoutRecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455C0FE1F9C7E9E003A0021 /* WorkoutRecordTableViewController.swift */; };
 		8455C1011F9C7F52003A0021 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455C1001F9C7F52003A0021 /* Workout.swift */; };
-		8455C1031F9C8565003A0021 /* ChooseWorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455C1021F9C8565003A0021 /* ChooseWorkoutTableViewController.swift */; };
 		8455C1051F9C8D45003A0021 /* WorkoutSetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455C1041F9C8D45003A0021 /* WorkoutSetTableViewCell.swift */; };
 		8455C1071F9C925A003A0021 /* WorkoutLogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455C1061F9C925A003A0021 /* WorkoutLogTableViewController.swift */; };
 		8455C1091F9CB5F5003A0021 /* ExerciseDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455C1081F9CB5F5003A0021 /* ExerciseDetailTableViewController.swift */; };
+		845B112B1FA5022400EA644E /* WorkoutLogDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B112A1FA5022400EA644E /* WorkoutLogDetailTableViewController.swift */; };
+		845B112D1FA5032E00EA644E /* WorkoutLogCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B112C1FA5032E00EA644E /* WorkoutLogCellTableViewCell.swift */; };
 		84E8230B1FA26566002861D3 /* MuscleGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8230A1FA26566002861D3 /* MuscleGroupTableViewController.swift */; };
 		84E8230D1FA26AE6002861D3 /* ExercisesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8230C1FA26AE6002861D3 /* ExercisesTableViewController.swift */; };
+		84F206FE1FA5E22A0016131F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F206FD1FA5E22A0016131F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,17 +32,18 @@
 		8455C0E91F9C7A57003A0021 /* Gym Tracker with Logs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gym Tracker with Logs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8455C0EC1F9C7A58003A0021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8455C0F11F9C7A58003A0021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8455C0F31F9C7A58003A0021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8455C0F61F9C7A58003A0021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8455C0F81F9C7A58003A0021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8455C0FE1F9C7E9E003A0021 /* WorkoutLogDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLogDetailTableViewController.swift; sourceTree = "<group>"; };
+		8455C0FE1F9C7E9E003A0021 /* WorkoutRecordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRecordTableViewController.swift; sourceTree = "<group>"; };
 		8455C1001F9C7F52003A0021 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
-		8455C1021F9C8565003A0021 /* ChooseWorkoutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseWorkoutTableViewController.swift; sourceTree = "<group>"; };
 		8455C1041F9C8D45003A0021 /* WorkoutSetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSetTableViewCell.swift; sourceTree = "<group>"; };
 		8455C1061F9C925A003A0021 /* WorkoutLogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLogTableViewController.swift; sourceTree = "<group>"; };
 		8455C1081F9CB5F5003A0021 /* ExerciseDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailTableViewController.swift; sourceTree = "<group>"; };
+		845B112A1FA5022400EA644E /* WorkoutLogDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLogDetailTableViewController.swift; sourceTree = "<group>"; };
+		845B112C1FA5032E00EA644E /* WorkoutLogCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLogCellTableViewCell.swift; sourceTree = "<group>"; };
 		84E8230A1FA26566002861D3 /* MuscleGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroupTableViewController.swift; sourceTree = "<group>"; };
 		84E8230C1FA26AE6002861D3 /* ExercisesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewController.swift; sourceTree = "<group>"; };
+		84F206FD1FA5E22A0016131F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Gym Tracker with Logs/Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,8 @@
 		840F6DB51FA4905C00D93EA3 /* Workout */ = {
 			isa = PBXGroup;
 			children = (
+				8455C1041F9C8D45003A0021 /* WorkoutSetTableViewCell.swift */,
+				8455C0FE1F9C7E9E003A0021 /* WorkoutRecordTableViewController.swift */,
 				840F6DB31FA48D1600D93EA3 /* WorkoutMuscleGroupTableViewController.swift */,
 				840F6DB11FA48A7B00D93EA3 /* WorkoutDetailTableViewController.swift */,
 				840F6DAF1FA489DF00D93EA3 /* WorkoutsTableViewController.swift */,
@@ -78,10 +82,9 @@
 		840F6DB71FA49C6400D93EA3 /* Log */ = {
 			isa = PBXGroup;
 			children = (
+				845B112C1FA5032E00EA644E /* WorkoutLogCellTableViewCell.swift */,
+				845B112A1FA5022400EA644E /* WorkoutLogDetailTableViewController.swift */,
 				8455C1061F9C925A003A0021 /* WorkoutLogTableViewController.swift */,
-				8455C1021F9C8565003A0021 /* ChooseWorkoutTableViewController.swift */,
-				8455C0FE1F9C7E9E003A0021 /* WorkoutLogDetailTableViewController.swift */,
-				8455C1041F9C8D45003A0021 /* WorkoutSetTableViewCell.swift */,
 			);
 			path = Log;
 			sourceTree = "<group>";
@@ -89,6 +92,7 @@
 		8455C0E01F9C7A57003A0021 = {
 			isa = PBXGroup;
 			children = (
+				84F206FD1FA5E22A0016131F /* Assets.xcassets */,
 				8455C0EB1F9C7A57003A0021 /* Gym Tracker with Logs */,
 				8455C0EA1F9C7A57003A0021 /* Products */,
 			);
@@ -111,7 +115,6 @@
 				840F6DB51FA4905C00D93EA3 /* Workout */,
 				8455C1001F9C7F52003A0021 /* Workout.swift */,
 				8455C0F01F9C7A58003A0021 /* Main.storyboard */,
-				8455C0F31F9C7A58003A0021 /* Assets.xcassets */,
 				8455C0F51F9C7A58003A0021 /* LaunchScreen.storyboard */,
 				8455C0F81F9C7A58003A0021 /* Info.plist */,
 			);
@@ -178,7 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8455C0F71F9C7A58003A0021 /* LaunchScreen.storyboard in Resources */,
-				8455C0F41F9C7A58003A0021 /* Assets.xcassets in Resources */,
+				84F206FE1FA5E22A0016131F /* Assets.xcassets in Resources */,
 				8455C0F21F9C7A58003A0021 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,15 +196,16 @@
 				8455C1071F9C925A003A0021 /* WorkoutLogTableViewController.swift in Sources */,
 				8455C1091F9CB5F5003A0021 /* ExerciseDetailTableViewController.swift in Sources */,
 				840F6DB21FA48A7B00D93EA3 /* WorkoutDetailTableViewController.swift in Sources */,
-				8455C1031F9C8565003A0021 /* ChooseWorkoutTableViewController.swift in Sources */,
 				84E8230D1FA26AE6002861D3 /* ExercisesTableViewController.swift in Sources */,
+				845B112D1FA5032E00EA644E /* WorkoutLogCellTableViewCell.swift in Sources */,
 				8455C1051F9C8D45003A0021 /* WorkoutSetTableViewCell.swift in Sources */,
 				840F6DB41FA48D1600D93EA3 /* WorkoutMuscleGroupTableViewController.swift in Sources */,
 				84E8230B1FA26566002861D3 /* MuscleGroupTableViewController.swift in Sources */,
 				8455C0ED1F9C7A58003A0021 /* AppDelegate.swift in Sources */,
 				840F6DB01FA489DF00D93EA3 /* WorkoutsTableViewController.swift in Sources */,
-				8455C0FF1F9C7E9E003A0021 /* WorkoutLogDetailTableViewController.swift in Sources */,
+				8455C0FF1F9C7E9E003A0021 /* WorkoutRecordTableViewController.swift in Sources */,
 				8455C1011F9C7F52003A0021 /* Workout.swift in Sources */,
+				845B112B1FA5022400EA644E /* WorkoutLogDetailTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
