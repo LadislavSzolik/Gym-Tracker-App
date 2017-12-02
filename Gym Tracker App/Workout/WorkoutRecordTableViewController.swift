@@ -57,7 +57,7 @@ class WorkoutRecordTableViewController: UITableViewController, WorkoutSetCellDel
             cell.indexPath = indexPath
             
             if set.weight != 0.0 {
-                cell.WeightsTextField.text = "\(set.weight)"
+                cell.WeightsTextField.text = "\(String(describing: set.weight))"
             }
             if set.repetition != 0 {
                 cell.repetitionTextField.text = "\(set.repetition)"

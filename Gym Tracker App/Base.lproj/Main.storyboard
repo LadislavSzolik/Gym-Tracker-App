@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HCt-xH-42H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HCt-xH-42H">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Workout-->
         <scene sceneID="pUv-mk-p7Y">
             <objects>
-                <tableViewController id="ioj-as-vY1" customClass="WorkoutRecordTableViewController" customModule="Gym_Tracker_with_Logs" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ioj-as-vY1" customClass="WorkoutRecordTableViewController" customModule="Gym_Tracker_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="z5k-go-ed0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutSetCell" id="cbc-JQ-BqA" customClass="WorkoutSetTableViewCell" customModule="Gym_Tracker_with_Logs" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutSetCell" id="cbc-JQ-BqA" customClass="WorkoutSetTableViewCell" customModule="Gym_Tracker_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cbc-JQ-BqA" id="rbO-Re-YRb">
@@ -134,12 +134,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L17-B2-Inn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NrX-T4-fIp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1884" y="2579"/>
+            <point key="canvasLocation" x="1297" y="1863"/>
         </scene>
         <!--Workout Log-->
         <scene sceneID="VrX-xW-CUl">
             <objects>
-                <tableViewController id="2yL-aO-4FD" customClass="WorkoutLogTableViewController" customModule="Gym_Tracker_with_Logs" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="2yL-aO-4FD" customClass="WorkoutLogTableViewController" customModule="Gym_Tracker_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nwX-qE-BF0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,7 +149,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a2H-ws-97I" id="MVv-Hz-XSZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tmd-7X-odQ">
@@ -187,13 +187,13 @@
         <!--Workout Log Detail Table View Controller-->
         <scene sceneID="qeL-Sz-LzN">
             <objects>
-                <tableViewController id="v7M-b2-3y1" customClass="WorkoutLogDetailTableViewController" customModule="Gym_Tracker_with_Logs" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="v7M-b2-3y1" customClass="WorkoutLogDetailTableViewController" customModule="Gym_Tracker_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="seA-XP-kuU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutLogCell" id="Yda-0z-P0z" customClass="WorkoutLogCellTableViewCell" customModule="Gym_Tracker_with_Logs" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutLogCell" id="Yda-0z-P0z" customClass="WorkoutLogCellTableViewCell" customModule="Gym_Tracker_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yda-0z-P0z" id="xdA-YA-uzv">
@@ -295,7 +295,7 @@
         <!--Exercise-->
         <scene sceneID="dSG-23-11w">
             <objects>
-                <tableViewController id="Zxh-Pi-BV1" customClass="ExerciseDetailTableViewController" customModule="Gym_Tracker_with_Logs" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Zxh-Pi-BV1" customClass="ExerciseDetailTableViewController" customModule="Gym_Tracker_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="piZ-ch-dc5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,7 +336,7 @@
                                         <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V5M-0F-OTj" id="SWy-Z4-j8V">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Choose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1xz-ms-XE5">
@@ -381,12 +381,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LRq-XV-ahB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="vjf-uq-WpE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="276" y="1540"/>
+            <point key="canvasLocation" x="594" y="1082"/>
         </scene>
         <!--Muscle Group Table View Controller-->
         <scene sceneID="P3o-ar-AkM">
             <objects>
-                <tableViewController id="AL3-qp-Daz" customClass="MuscleGroupTableViewController" customModule="Gym_Tracker_with_Logs" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="AL3-qp-Daz" customClass="MuscleGroupTableViewController" customModule="Gym_Tracker_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NWD-Xl-dRf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -400,7 +400,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bLK-3u-Jev">
-                                            <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -422,12 +422,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICT-eR-PvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="nna-Pa-qvQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="1540"/>
+            <point key="canvasLocation" x="1298" y="1081"/>
         </scene>
         <!--Exercises-->
         <scene sceneID="mBZ-gU-ulC">
             <objects>
-                <tableViewController id="Cpg-ID-Tjd" customClass="ExercisesTableViewController" customModule="Gym_Tracker_with_Logs" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Cpg-ID-Tjd" customClass="ExercisesTableViewController" customModule="Gym_Tracker_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UPF-sn-Whl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -448,7 +448,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="amw-3F-2yZ">
-                                            <rect key="frame" x="301" y="12" width="59" height="20.5"/>
+                                            <rect key="frame" x="300" y="12" width="59" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -476,7 +476,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQE-Ii-FQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1266" y="1540"/>
+            <point key="canvasLocation" x="-841" y="1082"/>
         </scene>
         <!--Exercises-->
         <scene sceneID="CRR-Pr-o7B">
@@ -493,12 +493,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="twf-29-bxL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2036" y="1540"/>
+            <point key="canvasLocation" x="-1582" y="1082"/>
         </scene>
         <!--Workouts-->
         <scene sceneID="zu6-hw-Vna">
             <objects>
-                <tableViewController id="IfX-PL-J9r" customClass="WorkoutsTableViewController" customModule="Gym_Tracker_with_Logs" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="IfX-PL-J9r" customClass="WorkoutsTableViewController" customModule="Gym_Tracker_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="caC-qT-mYJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -531,12 +531,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dmv-et-j1p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1129" y="2841"/>
+            <point key="canvasLocation" x="-842" y="1854"/>
         </scene>
         <!--New Workout-->
         <scene sceneID="dmK-eu-EY4">
             <objects>
-                <tableViewController id="S5w-ia-nYq" customClass="WorkoutDetailTableViewController" customModule="Gym_Tracker_with_Logs" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="S5w-ia-nYq" customClass="WorkoutDetailTableViewController" customModule="Gym_Tracker_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="mQD-K0-o8m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -546,7 +546,7 @@
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hDz-vu-92s" id="93u-Gx-iEy">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Choose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0bl-qn-2hn">
@@ -577,7 +577,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mK8-FR-tig">
-                                            <rect key="frame" x="316" y="12" width="44" height="20.5"/>
+                                            <rect key="frame" x="315" y="12" width="44" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -594,7 +594,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Choose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gNE-BF-WrF">
-                                            <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -607,7 +607,7 @@
                                 <rect key="frame" x="0.0" y="187.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QFV-Ea-AkW" id="ybZ-N7-lD1">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Record workout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Upx-4u-gZA">
@@ -649,12 +649,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u1h-eI-UXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="fh8-WI-fHj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="988" y="2840"/>
+            <point key="canvasLocation" x="593" y="1854"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="gBD-J8-KiL">
+            <objects>
+                <tableViewController id="hWy-aD-bj0" customClass="MeasurementProgressTableViewController" customModule="Gym_Tracker_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="48O-ZR-TS2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MeasurementCell" textLabel="jMJ-Rm-dgl" detailTextLabel="gGG-vd-09e" style="IBUITableViewCellStyleSubtitle" id="5Xn-qX-arc">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Xn-qX-arc" id="Dw0-SX-oHQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jMJ-Rm-dgl">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gGG-vd-09e">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hWy-aD-bj0" id="dJY-wR-MYu"/>
+                            <outlet property="delegate" destination="hWy-aD-bj0" id="ZDZ-TZ-Ze5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="zt1-OY-VQA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cys-m4-Usa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-682" y="3274"/>
+        </scene>
+        <!--Measurement-->
+        <scene sceneID="I9D-5V-RaM">
+            <objects>
+                <navigationController id="HXW-el-fd5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Measurement" id="1GV-xU-M1r"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ciH-6O-evJ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hWy-aD-bj0" kind="relationship" relationship="rootViewController" id="cgH-7N-ZXy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="abH-Uj-IBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1633" y="3274"/>
         </scene>
         <!--Workout Muscle Group Table View Controller-->
         <scene sceneID="BwS-2n-2SR">
             <objects>
-                <tableViewController id="LZK-wk-r57" customClass="WorkoutMuscleGroupTableViewController" customModule="Gym_Tracker_with_Logs" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="LZK-wk-r57" customClass="WorkoutMuscleGroupTableViewController" customModule="Gym_Tracker_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FY5-Zy-BjT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -668,7 +730,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x0c-J0-OiS">
-                                            <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -686,7 +748,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9f-Ra-4Hx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1884" y="3310"/>
+            <point key="canvasLocation" x="1297" y="2630"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cgM-sE-XQJ">
@@ -702,7 +764,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jkv-JU-c14" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-47" y="2839"/>
+            <point key="canvasLocation" x="-89" y="1854"/>
         </scene>
         <!--Workouts-->
         <scene sceneID="TD3-k5-voB">
@@ -722,7 +784,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igp-Bs-OrU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2082" y="2841"/>
+            <point key="canvasLocation" x="-1583" y="1854"/>
         </scene>
         <!--Exercise-->
         <scene sceneID="b3F-8j-ksU">
@@ -739,7 +801,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uV7-NM-CeQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-470" y="1540"/>
+            <point key="canvasLocation" x="-124" y="1082"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vu0-uS-d5z">
@@ -755,6 +817,7 @@
                         <segue destination="xIc-wx-Ym3" kind="relationship" relationship="viewControllers" id="P6R-YV-dVp"/>
                         <segue destination="gVs-2G-9UI" kind="relationship" relationship="viewControllers" id="a0j-bK-c0r"/>
                         <segue destination="P7g-oY-snN" kind="relationship" relationship="viewControllers" id="YjD-9g-IH2"/>
+                        <segue destination="HXW-el-fd5" kind="relationship" relationship="viewControllers" id="34s-PZ-aUk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJ8-wd-bWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
