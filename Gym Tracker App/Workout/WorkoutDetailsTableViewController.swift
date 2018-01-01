@@ -55,8 +55,8 @@ class WorkoutDetailsTableViewController: UITableViewController, WorkoutExercises
     
     func updateSaveButton() {
         saveButton.isEnabled = false
-        if let text = workoutNameTextField!.text, let setWorkout = workout {
-            if !text.isEmpty && setWorkout.listOfWorkoutExercises.count > 0 {
+        if let text = workoutNameTextField!.text {
+            if !text.isEmpty && workoutExercises.count > 0 {
                 saveButton.isEnabled = true
             }
         }
