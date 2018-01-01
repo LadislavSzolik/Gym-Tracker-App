@@ -38,21 +38,17 @@ class WorkoutLogDetailTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return exercises[section].workoutSets.count
+        return exercises.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WorkoutLogCell", for: indexPath) as! WorkoutLogCellTableViewCell
-        let workoutSet = exercises[indexPath.section].workoutSets[indexPath.row]
+        //let workoutSet = exercises[indexPath.section].workoutSets[indexPath.row]
 
         cell.indexTextLabel.text = "\(indexPath.row)"
-        cell.repetitionValueLabel.text = String(workoutSet.repetition)
-        if let weight = workoutSet.weight {
-            cell.weightsValueLabel.text = String(weight)
-        } else {
-             cell.weightsValueLabel.text = "0"
-        }
+       // cell.repetitionValueLabel.text = String(workoutSet.repetition)
+      
        
 
         return cell

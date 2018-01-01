@@ -9,6 +9,14 @@
 import UIKit
 
 class WorkoutRecordTableViewController: UITableViewController, WorkoutSetCellDelegate {
+    func didWeightChanged(for indexPath: IndexPath, weights: Double) {
+        
+    }
+    
+    func didRepetitionChanged(for indexPath: IndexPath, repetition: Int) {
+    
+    }
+    
     
     var workout: Workout?
     var exercises = [Exercise]()
@@ -34,9 +42,6 @@ class WorkoutRecordTableViewController: UITableViewController, WorkoutSetCellDel
         return exercises.count
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return exercises[section].workoutSets.count + 1
-    }
 
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -44,38 +49,16 @@ class WorkoutRecordTableViewController: UITableViewController, WorkoutSetCellDel
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == exercises[indexPath.section].workoutSets.count {
+      
             let cell = tableView.dequeueReusableCell(withIdentifier: "AddNewWorkoutSetCell", for: indexPath)
+   
             return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "WorkoutSetCell", for: indexPath) as! WorkoutSetTableViewCell
-            let set = exercises[indexPath.section].workoutSets[indexPath.row]
-            cell.indexLabel.text = "\(indexPath.row + 1)."
-            cell.repetition = set.repetition
-            cell.weights = set.weight
-            cell.indexPath = indexPath
-            
-            if set.weight != 0.0 {
-                cell.WeightsTextField.text = "\(String(describing: set.weight))"
-            }
-            if set.repetition != 0 {
-                cell.repetitionTextField.text = "\(set.repetition)"
-            }
-            
-            cell.delegate = self
-            return cell
-        }
+      
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row == exercises[indexPath.section].workoutSets.count {
-            exercises[indexPath.section].workoutSets.append(WorkoutSet(index: indexPath.row, repetition: 0, weight: 0.0 ))
-            tableView.insertRows(at: [indexPath], with: .automatic)
-            tableView.beginUpdates()
-            tableView.endUpdates()
-  
-        }
+     
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -86,23 +69,7 @@ class WorkoutRecordTableViewController: UITableViewController, WorkoutSetCellDel
         return true
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            exercises[indexPath.section].workoutSets.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-    }
-    
-    // MARK: - Set Cell Delegate
-    
-    func didWeightChanged(for indexPath: IndexPath, weights: Double) {
-         exercises[indexPath.section].workoutSets[indexPath.row].weight = weights
-    }
-    
-    func didRepetitionChanged(for indexPath: IndexPath, repetition: Int) {
-         exercises[indexPath.section].workoutSets[indexPath.row].repetition = repetition
-    }
-    
+
     // MARK: - Private functions
 
 

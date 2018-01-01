@@ -11,7 +11,7 @@ import UIKit
 class ShowWorkoutTableViewController: UITableViewController {
 
     var workout: Workout?
-    var listOfMuscleGroupExercises = [MuscleGroupExercises]()
+    var listOfMuscleGroupExercises = [Exercise]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +44,8 @@ class ShowWorkoutTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseCell", for: indexPath)
-        let exercise = listOfMuscleGroupExercises[indexPath.section].listOfExercises[indexPath.row]
-        cell.textLabel!.text = "\(exercise.count)x \(exercise.name)"
+        //let exercise = listOfMuscleGroupExercises[indexPath.section].listOfExercises[indexPath.row]
+      //  cell.textLabel!.text = "\(exercise.count)x \(exercise.name)"
         return cell
     }
     

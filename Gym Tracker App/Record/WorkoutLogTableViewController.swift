@@ -49,7 +49,7 @@ class WorkoutLogTableViewController: UITableViewController {
     @IBAction
     func unwindToWorkoutLog(segue: UIStoryboardSegue) {        
         guard segue.identifier == "SaveWorkoutLogSegue" else { return}
-        
+        /*
         let workoutRecordController = segue.source as! WorkoutRecordTableViewController
         
         if let newWorkoutLog = workoutRecordController.workoutLog {
@@ -62,7 +62,7 @@ class WorkoutLogTableViewController: UITableViewController {
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
             WorkoutLog.saveWorkoutLogs(workoutLogs)
-        }
+        } */
         
     }
 

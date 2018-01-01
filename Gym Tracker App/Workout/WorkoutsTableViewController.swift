@@ -18,16 +18,10 @@ class WorkoutsTableViewController: UITableViewController {
         if let savedWorkouts = Workout.loadWorkouts() {
             workouts = savedWorkouts
         }
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        super.didReceiveMemoryWarning()      
     }
 
     // MARK: - Table view data source
@@ -46,47 +40,43 @@ class WorkoutsTableViewController: UITableViewController {
         let workout = workouts[indexPath.row]
         cell.textLabel?.text = workout.name
         
+        var exercisesText = ""
+        for exercise in workout.listOfWorkoutExercises {
+            exercisesText = exercisesText + exercise.name+","
+        }
+        exercisesText.removeLast()
+        cell.detailTextLabel!.text = exercisesText
         return cell
         
     }
     
-    
     @IBAction
     func unwindToWorkouts( segue:UIStoryboardSegue){
         if segue.identifier == "SaveWorkout" {
-            let workoutDetailController = segue.source as! SaveAndEditWorkoutTableViewController
+            let workoutDetailController = segue.source as! WorkoutDetailsTableViewController
             if let newWorkout = workoutDetailController.workout {
                 if let selectedIndexPath = tableView.indexPathForSelectedRow {
                     workouts[selectedIndexPath.row] = newWorkout
                     tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
                 } else {
-                    let newIndexPath = IndexPath(row: workouts.count, section: 0)
                     workouts.append(newWorkout)
-                    tableView.insertRows(at: [newIndexPath], with: .automatic)
+                    tableView.reloadData()
                 }
                 Workout.saveWorkout(workouts)
             }
         }
     }
 
-    
-    // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
  
-
-    
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            workouts.remove(at: indexPath.row)
-            Workout.saveWorkout(workouts)
+            workouts.remove(at: indexPath.row)           
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            Workout.saveWorkout(workouts)
+        }
     }
  
 
@@ -97,13 +87,10 @@ class WorkoutsTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
         return true
     }
-    */
+ 
 
     
     // MARK: - Navigation
@@ -111,13 +98,11 @@ class WorkoutsTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowWorkout" {
-            let workoutDetailController = segue.destination as! ShowWorkoutTableViewController
-            if let selectedIndex = tableView.indexPathForSelectedRow {
-                let selectedWorkout = workouts[selectedIndex.row]
-                workoutDetailController.workout = selectedWorkout
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                let navigation = segue.destination as! UINavigationController
+                let workoutDetailController = navigation.topViewController as! WorkoutDetailsTableViewController
+                workoutDetailController.workout =  workouts[selectedIndexPath.row]
             }
         }
     }
-    
-
 }

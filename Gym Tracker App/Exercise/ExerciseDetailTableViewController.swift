@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ExerciseDetailTableViewController: UITableViewController {
     
     
@@ -47,21 +48,10 @@ class ExerciseDetailTableViewController: UITableViewController {
         updateSaveButton()
     }
     
-
-    // MARK: - Private functions
-    /*
-    func updateMeasurementType() {
-        if (measurementSegment.selectedSegmentIndex == 0 && withWeightsSwitch.isOn ) {
-            typeOfMeasurement = .RepetitionAndWeight
-        } else if (measurementSegment.selectedSegmentIndex == 0 && !withWeightsSwitch.isOn ) {
-            typeOfMeasurement = .Repetition
-        } else if (measurementSegment.selectedSegmentIndex == 1 && withWeightsSwitch.isOn ) {
-            typeOfMeasurement = .TimeAndWeight
-        } else {
-            typeOfMeasurement = .Time
-        }
+    @IBAction func doneButtonPressed(_ sender: UITextField) {
+        sender.resignFirstResponder()
     }
- */
+    
     
     @IBAction
     func unwindToExerciseDetailFromMuscleGroup(segue:UIStoryboardSegue) {
@@ -89,7 +79,7 @@ class ExerciseDetailTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SaveExerciseSegue" {
-            exercise = Exercise(name: exerciseNameTextField.text!, muscleGroup: chosenMuscleGroup!, workoutSets: [], selected: false, count: 0)            
+            exercise = Exercise(name: exerciseNameTextField.text!, muscleGroup: chosenMuscleGroup!)
         } else if segue.identifier == "showMuscleGroups" {
             if let selectedchosenMuscleGroup = chosenMuscleGroup {
                 let muscleGroupController = segue.destination as! MuscleGroupTableViewController

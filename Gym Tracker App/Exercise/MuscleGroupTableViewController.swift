@@ -19,9 +19,12 @@ enum MuscleGroup: String, Codable {
     case Legs = "Legs"
     case Hammstrings = "Hammstrings"
     case Calves = "Calves"
+    case Forearm = "Forearm"
     
     static var count: Int { return MuscleGroup.Calves.hashValue+1 }
-    static var indexList = [Shoulder, Triceps, Biceps, Chest, Abs, Back, Legs, Hammstrings, Calves]
+    static var indexList = [Shoulder, Triceps, Biceps, Chest, Abs, Back, Legs, Hammstrings, Calves, Forearm].sorted { (group1, group2) -> Bool in
+        return ComparisonResult.orderedAscending == group1.rawValue.localizedStandardCompare(group2.rawValue)
+    }
 }
 
 class MuscleGroupTableViewController: UITableViewController {
