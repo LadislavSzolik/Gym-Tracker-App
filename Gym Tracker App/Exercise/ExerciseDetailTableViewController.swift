@@ -89,7 +89,7 @@ class ExerciseDetailTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SaveExerciseSegue" {
-            exercise = Exercise(name: exerciseNameTextField.text!, muscleGroup: chosenMuscleGroup!, workoutSets: [])            
+            exercise = Exercise(name: exerciseNameTextField.text!, muscleGroup: chosenMuscleGroup!, workoutSets: [], selected: false, count: 0)            
         } else if segue.identifier == "showMuscleGroups" {
             if let selectedchosenMuscleGroup = chosenMuscleGroup {
                 let muscleGroupController = segue.destination as! MuscleGroupTableViewController

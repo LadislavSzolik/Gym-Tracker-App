@@ -19,7 +19,7 @@ class WorkoutLogDetailTableViewController: UITableViewController {
 
         if let workout = workout {
             navigationItem.title = workout.name
-            exercises = workout.exercises
+            
         }
     }
 

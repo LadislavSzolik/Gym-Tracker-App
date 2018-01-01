@@ -10,15 +10,32 @@ import UIKit
 
 class ExercisesTableViewController: UITableViewController {
     
-    var exercises = [Exercise]()
+    var listOfMuscleGroupExercises = [MuscleGroupExercises]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let savedExercises = Exercise.loadExercises() {
-            exercises = savedExercises
+        if let loadedData = MuscleGroupExercises.loadMuscleGroupExercises() {
+            listOfMuscleGroupExercises = loadedData
+        } else {
+            // Temporary test data
+            let exercise1 = Exercise(name: "Pushups", muscleGroup: .Chest, workoutSets: [], selected: false, count: 0)
+            let exercise2 = Exercise(name: "Curl Row", muscleGroup: .Hammstrings, workoutSets: [], selected: false, count: 0)
+            let exercise3 = Exercise(name: "Seated Shoulder Press", muscleGroup: .Shoulder, workoutSets: [], selected: false, count: 0)
+            let exercise4 = Exercise(name: "Arnold Press", muscleGroup: .Shoulder, workoutSets: [], selected: false, count: 0)
+            
+            let muscleGroupExercises1 = MuscleGroupExercises(muscleGroup: .Chest, listOfExercises: [exercise1])
+            let muscleGroupExercises2 = MuscleGroupExercises(muscleGroup: .Hammstrings, listOfExercises: [exercise2])
+            let muscleGroupExercises3 = MuscleGroupExercises(muscleGroup: .Shoulder, listOfExercises: [exercise3, exercise4])
+            listOfMuscleGroupExercises.append(muscleGroupExercises1)
+            listOfMuscleGroupExercises.append(muscleGroupExercises2)
+            listOfMuscleGroupExercises.append(muscleGroupExercises3)
+            listOfMuscleGroupExercises.sort(by: <)
+            MuscleGroupExercises.saveMuscleGroupExercises(listOfMuscleGroupExercises)
         }
-
+        
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -34,19 +51,21 @@ class ExercisesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {        
-        return 1
+        return listOfMuscleGroupExercises.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return listOfMuscleGroupExercises[section].muscleGroup.rawValue
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return exercises.count
+        return listOfMuscleGroupExercises[section].listOfExercises.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseCell", for: indexPath)
-        let exercise = exercises[indexPath.row]
-        cell.textLabel!.text = exercise.name
-        cell.detailTextLabel!.text = exercise.muscleGroup.rawValue
+        let exercise = listOfMuscleGroupExercises[indexPath.section].listOfExercises[indexPath.row]
+        cell.textLabel!.text = exercise.name        
         return cell
     }
     
@@ -94,17 +113,31 @@ class ExercisesTableViewController: UITableViewController {
         
         if let newExercise = exerciseDetailController.exercise {
             
-            if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                exercises[selectedIndexPath.row] = newExercise
-                tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+            if listOfMuscleGroupExercises.isEmpty {
+                let newMuscleGroupExercises = MuscleGroupExercises(muscleGroup: newExercise.muscleGroup, listOfExercises: [newExercise])
+                listOfMuscleGroupExercises.append(newMuscleGroupExercises)
             } else {
-                let newIndexPath = IndexPath(row: exercises.count, section: 0)
-                exercises.append(newExercise)
-                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            
+                // TODO: Add update exercise
+                var foundMuscleGroup = false
+                for i in 0...listOfMuscleGroupExercises.count-1 {
+                    if listOfMuscleGroupExercises[i].muscleGroup == newExercise.muscleGroup {
+                        listOfMuscleGroupExercises[i].listOfExercises.append(newExercise)
+                        listOfMuscleGroupExercises[i].listOfExercises.sort(by: <)
+                        foundMuscleGroup = true
+                        break
+                    }
+                }
+                
+                if !foundMuscleGroup {
+                    let newMuscleGroupExercises = MuscleGroupExercises(muscleGroup: newExercise.muscleGroup, listOfExercises: [newExercise])
+                    listOfMuscleGroupExercises.append(newMuscleGroupExercises)
+                    listOfMuscleGroupExercises.sort(by: <)
+                }
             }
-            Exercise.saveExercises(exercises)
+            MuscleGroupExercises.saveMuscleGroupExercises(listOfMuscleGroupExercises)
+            tableView.reloadData()
         }
-        
     }
     
     // MARK: - Navigation
@@ -112,9 +145,8 @@ class ExercisesTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowExerciseDetails" {
-        
             if let selectedIndex = tableView.indexPathForSelectedRow {
-                let selectedExercise = exercises[selectedIndex.row]
+                let selectedExercise = listOfMuscleGroupExercises[selectedIndex.section].listOfExercises[selectedIndex.row]
                 let navigationController = segue.destination as! UINavigationController
                 let exerciseDetailController = navigationController.topViewController as! ExerciseDetailTableViewController
                 exerciseDetailController.exercise = selectedExercise

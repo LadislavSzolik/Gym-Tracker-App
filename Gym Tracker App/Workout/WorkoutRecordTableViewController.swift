@@ -20,7 +20,6 @@ class WorkoutRecordTableViewController: UITableViewController, WorkoutSetCellDel
         super.viewDidLoad()
         if let workout = workout {
             navigationItem.title = workout.name
-            exercises = workout.exercises
         }
        
     }
@@ -116,7 +115,7 @@ class WorkoutRecordTableViewController: UITableViewController, WorkoutSetCellDel
         
         guard segue.identifier == "SaveWorkoutLogSegue" else {return}
         
-        workout!.exercises = exercises
+        
         
         if let allWorkouts = Workout.loadWorkouts() {
             var workouts = allWorkouts

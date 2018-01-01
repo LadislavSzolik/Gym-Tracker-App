@@ -12,10 +12,9 @@ class WorkoutsTableViewController: UITableViewController {
     
     var workouts = [Workout]()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if let savedWorkouts = Workout.loadWorkouts() {
             workouts = savedWorkouts
         }
@@ -55,7 +54,7 @@ class WorkoutsTableViewController: UITableViewController {
     @IBAction
     func unwindToWorkouts( segue:UIStoryboardSegue){
         if segue.identifier == "SaveWorkout" {
-            let workoutDetailController = segue.source as! WorkoutDetailTableViewController
+            let workoutDetailController = segue.source as! SaveAndEditWorkoutTableViewController
             if let newWorkout = workoutDetailController.workout {
                 if let selectedIndexPath = tableView.indexPathForSelectedRow {
                     workouts[selectedIndexPath.row] = newWorkout
@@ -70,25 +69,26 @@ class WorkoutsTableViewController: UITableViewController {
         }
     }
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+ 
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            workouts.remove(at: indexPath.row)
+            Workout.saveWorkout(workouts)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+ 
 
     /*
     // Override to support rearranging the table view.
@@ -110,9 +110,8 @@ class WorkoutsTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowWorkoutDetail" {
-            let navigation = segue.destination as! UINavigationController
-            let workoutDetailController = navigation.topViewController as! WorkoutDetailTableViewController
+        if segue.identifier == "ShowWorkout" {
+            let workoutDetailController = segue.destination as! ShowWorkoutTableViewController
             if let selectedIndex = tableView.indexPathForSelectedRow {
                 let selectedWorkout = workouts[selectedIndex.row]
                 workoutDetailController.workout = selectedWorkout

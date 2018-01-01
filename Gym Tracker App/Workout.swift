@@ -9,22 +9,8 @@
 import Foundation
 
 struct Workout: Codable, Equatable {
-    static func ==(lhs: Workout, rhs: Workout) -> Bool {
-        return lhs.name == rhs.name
-    }
-    
     var name: String
-    var exercises: [Exercise]
-    var muscleGroups: [MuscleGroup]
-    
-    static func loadSampleWorkouts() -> [Workout] {
-        return [ Workout(name: "Shoulder, Triceps",
-                         exercises: [Exercise(name:"Seated Barbell Press", muscleGroup:.Shoulder,  workoutSets:[]),
-                                     Exercise(name:"Seated Aronld Press", muscleGroup:.Shoulder,  workoutSets:[]),
-                                     Exercise(name:"Barbell Front Raise", muscleGroup:.Shoulder,  workoutSets:[])]
-            , muscleGroups: [.Shoulder, .Triceps]
-            )]
-    }
+    var muscleGroupExercises: [MuscleGroupExercises]
     
     static let DocumentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     static let SavedWorkoutURL = DocumentsDirectory.appendingPathComponent("workout").appendingPathExtension("plist")
@@ -39,6 +25,9 @@ struct Workout: Codable, Equatable {
         let propertyListEncoder = PropertyListEncoder()
         let codedWorkouts = try? propertyListEncoder.encode(workouts)
         try? codedWorkouts?.write(to: SavedWorkoutURL, options: .noFileProtection)
+    }
+    static func ==(lhs: Workout, rhs: Workout) -> Bool {
+        return lhs.name == rhs.name
     }
     
 }
@@ -70,10 +59,20 @@ struct WorkoutLog:Codable {
     }
 }
 
-struct Exercise: Codable  {
+struct Exercise: Codable, Equatable  {
     var name: String
     var muscleGroup: MuscleGroup
     var workoutSets: [WorkoutSet]
+    var selected: Bool = false
+    var count: Int = 0
+    
+    static func ==(lhs: Exercise, rhs: Exercise) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
+    static func <(lhs: Exercise, rhs: Exercise) -> Bool {
+        return lhs.name < rhs.name
+    }
     
     static let DocumentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     static let SavedExerciseURL = DocumentsDirectory.appendingPathComponent("exercise").appendingPathExtension("plist")
@@ -97,21 +96,38 @@ struct WorkoutSet: Codable  {
     var weight: Double?
 }
 
-enum MuscleGroup: String, Codable {
-    case Shoulder = "Shoulder"
-    case Triceps = "Triceps"
-    case Biceps = "Biceps"
-    case Chest = "Chest"
-    case Abs = "Abs"
-    case Back = "Back"
-    case Legs = "Legs"
-    case Hammstrings = "Hammstrings"
-    case Calves = "Calves"
-    
 
-    static var count: Int { return MuscleGroup.Calves.hashValue+1 }
-    static var indexList = [Shoulder, Triceps, Biceps, Chest, Abs, Back, Legs, Hammstrings, Calves]
+
+struct MuscleGroupExercises: Codable, Equatable {
+   
+    
+    var muscleGroup : MuscleGroup
+    var listOfExercises: [Exercise]
+    
+    static func ==(lhs: MuscleGroupExercises, rhs: MuscleGroupExercises) -> Bool {
+        return lhs.muscleGroup.rawValue == rhs.muscleGroup.rawValue
+    }
+    
+    static func <(lhs: MuscleGroupExercises, rhs: MuscleGroupExercises) -> Bool {
+        return lhs.muscleGroup.rawValue < rhs.muscleGroup.rawValue
+    }
+    
+    static let DocumentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let SavedMuscleGroupExerciseURL = DocumentsDirectory.appendingPathComponent("muscleGroupExercises").appendingPathExtension("plist")
+    
+    static func loadMuscleGroupExercises() -> [MuscleGroupExercises]? {
+        guard let codedMuscleGroupExercise = try? Data(contentsOf: SavedMuscleGroupExerciseURL) else {return nil}
+        let propertyListDecoder = PropertyListDecoder()
+        return try? propertyListDecoder.decode(Array<MuscleGroupExercises>.self, from: codedMuscleGroupExercise)
+    }
+    
+    static func saveMuscleGroupExercises(_ muscleGroupexercises :[MuscleGroupExercises]) {
+        let propertyListEncoder = PropertyListEncoder()
+        let codedMuscleGroupExercise = try? propertyListEncoder.encode(muscleGroupexercises)
+        try? codedMuscleGroupExercise?.write(to: SavedMuscleGroupExerciseURL, options: .noFileProtection)
+    }
 }
+
 /*
 enum TypeOfMeasurement: String, Codable {
     case Time = "Time"
